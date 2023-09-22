@@ -21,6 +21,21 @@
             timeout-ms = <25>;
             layers = <0>;
         };
+
+        Down {
+            bindings = <&kp DOWN_ARROW>;
+            key-positions = <20 33>;
+        };
+
+        Left {
+            bindings = <&kp LEFT_ARROW>;
+            key-positions = <31 32>;
+        };
+
+        Right {
+            bindings = <&kp RIGHT_ARROW>;
+            key-positions = <32 33>;
+        };
     };
 
     keymap {
