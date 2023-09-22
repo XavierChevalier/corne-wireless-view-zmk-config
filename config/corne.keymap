@@ -18,7 +18,7 @@
         Up {
             bindings = <&kp UP_ARROW>;
             key-positions = <20 31>;
-            timeout-ms = <25>;
+            timeout-ms = <100>;
             layers = <0>;
         };
 
