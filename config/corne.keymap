@@ -42,26 +42,31 @@
         PageUp {
             bindings = <&kp PAGE_UP>;
             key-positions = <19 20>;
+            layers = <0>;
         };
 
         PageDown {
             bindings = <&kp PAGE_DOWN>;
             key-positions = <20 21>;
+            layers = <0>;
         };
 
         AtSymbol {
             bindings = <&kp FR_AT>;
             key-positions = <18 30>;
+            layers = <0>;
         };
 
         EHighAccent {
-            bindings = <&kp A>;
+            bindings = <&kp FR_EACU>;
             key-positions = <14 3>;
+            layers = <0>;
         };
 
         EGraveAccent {
-            bindings = <&kp B>;
+            bindings = <&kp FR_EGRV>;
             key-positions = <3 16>;
+            layers = <0>;
         };
     };
 
