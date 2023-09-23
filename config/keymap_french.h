@@ -37,19 +37,19 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define FR_SUP2 GRAVE   // ²
-#define FR_AMPR N1    // &
-#define FR_EACU N2    // é
-#define FR_DQUO N3    // "
-#define FR_QUOT N4    // '
-#define FR_LPRN N5    // (
-#define FR_MINS N6    // -
-#define FR_EGRV N7    // è
-#define FR_UNDS N8    // _
-#define FR_CCED N9    // ç
-#define FR_AGRV N0    // à
-#define FR_RPRN MINUS   // )
-#define FR_EQL  EQUAL   // =
+#define FR_SUP2 GRAVE   // ²  (<)
+#define FR_AMPR N1      // &  (ok)
+#define FR_EACU N2      // é  (ok)
+#define FR_DQUO N3      // "  (ok)
+#define FR_QUOT N4      // '  (ok)
+#define FR_LPRN N5      // (  (ok)
+#define FR_MINS N6      // -  (§)
+#define FR_EGRV N7      // è  (ok)
+#define FR_UNDS N8      // _  (!)
+#define FR_CCED N9      // ç  (ok)
+#define FR_AGRV N0      // à  (ok)
+#define FR_RPRN MINUS   // )  (ok)
+#define FR_EQL  EQUAL   // =  ()
 // Row 2
 #define FR_A    Q    // A
 #define FR_Z    W    // Z
@@ -114,7 +114,7 @@
 #define FR_8    LS(FR_UNDS) // 8
 #define FR_9    LS(FR_CCED) // 9
 #define FR_0    LS(FR_AGRV) // 0
-#define FR_DEG  LS(FR_RPRN) // °
+#define FR_DEG  LS(MINUS)   // °
 #define FR_PLUS LS(FR_EQL)  // +
 // Row 2
 #define FR_DIAE LS(FR_CIRC) // ¨ (dead)
@@ -127,7 +127,7 @@
 #define FR_QUES LS(FR_COMM) // ?
 #define FR_DOT  LS(FR_SCLN) // .
 #define FR_SLSH LS(FR_COLN) // /
-#define FR_SECT LS(FR_EXLM) // §
+#define FR_SECT N5 // §
 
 /* AltGr symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
@@ -145,13 +145,13 @@
 // Row 1
 #define FR_TILD RA(FR_EACU) // ~ (dead)
 #define FR_HASH RA(FR_DQUO) // #
-#define FR_LCBR RA(FR_QUOT) // {
-#define FR_LBRC RA(FR_LPRN) // [
+#define FR_LCBR RA(N5)      // {
+#define FR_LBRC LS(FR_LCBR) // [
 #define FR_PIPE RA(FR_MINS) // |
 #define FR_GRV  RA(FR_EGRV) // ` (dead)
 #define FR_BSLS RA(FR_UNDS) // (backslash)
 #define FR_AT   RA(FR_AGRV) // @
-#define FR_RBRC RA(FR_RPRN) // ]
-#define FR_RCBR RA(FR_EQL)  // }
+#define FR_RCBR RA(MINUS)   // }
+#define FR_RBRC LS(FR_RCBR) // ]
 // Row 2
 #define FR_EURO LA(FR_DLR) // € (dead!)
