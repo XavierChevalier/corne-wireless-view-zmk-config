@@ -50,7 +50,7 @@
         };
 
         AtSymbol {
-            bindings = <&kp AT_SIGN>;
+            bindings = <&kp FR_AT>;
             key-positions = <18 30>;
         };
     };
