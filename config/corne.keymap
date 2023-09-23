@@ -38,6 +38,21 @@
             key-positions = <32 33>;
             layers = <0>;
         };
+
+        PageUp {
+            bindings = <&kp PAGE_UP>;
+            key-positions = <19 20>;
+        };
+
+        PageDown {
+            bindings = <&kp PAGE_DOWN>;
+            key-positions = <20 21>;
+        };
+
+        AtSymbol {
+            bindings = <&kp AT_SIGN>;
+            key-positions = <18 30>;
+        };
     };
 
     keymap {
