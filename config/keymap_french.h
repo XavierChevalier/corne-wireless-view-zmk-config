@@ -61,9 +61,9 @@
 #define FR_I    I    // I
 #define FR_O    O    // O
 #define FR_P    P    // P
-#define FR_CIRC LBKT  // ^ (dead)
-//#define FR_DLR  RBKT  // $ (probably dead)
-#define FR_DLR  KC_RBRC // $
+#define FR_CIRC LEFT_BRACKET  // ^ (dead)
+//#define FR_DLR  RBKT      // $ (probably dead)
+#define FR_DLR  RIGHT_BRACE // $
 // Row 3
 #define FR_Q    A    // Q
 #define FR_S    S    // S
@@ -117,7 +117,7 @@
 #define FR_DEG  LS(MINUS)   // °
 #define FR_PLUS LS(FR_EQL)  // +
 // Row 2
-#define FR_DIAE LS(FR_CIRC) // ¨ (dead)
+#define FR_DIAE LS(FR_CIRC) // ¨  (dead)
 #define FR_PND  LS(FR_DLR)  // £
 // Row 3
 #define FR_PERC LS(FR_UGRV) // %
@@ -143,15 +143,15 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define FR_TILD RA(FR_EACU) // ~ (dead)
+#define FR_TILD RA(FR_EACU) // ~  (dead)
 #define FR_HASH RA(FR_DQUO) // #
-#define FR_LCBR RA(N5)      // {
-#define FR_LBRC LS(FR_LCBR) // [
+#define FR_LCBR RA(N5)      // {  (ok)
+#define FR_LBRC LS(FR_LCBR) // [  (ok)
 #define FR_PIPE RA(FR_MINS) // |
-#define FR_GRV  RA(FR_EGRV) // ` (dead)
+#define FR_GRV  RA(FR_EGRV) // `  (dead)
 #define FR_BSLS RA(FR_UNDS) // (backslash)
 #define FR_AT   RA(FR_AGRV) // @
-#define FR_RCBR RA(MINUS)   // }
-#define FR_RBRC LS(FR_RCBR) // ]
+#define FR_RCBR RA(MINUS)   // }  (ok)
+#define FR_RBRC LS(FR_RCBR) // ]  (ok)
 // Row 2
-#define FR_EURO LA(FR_DLR) // € (dead!)
+#define FR_EURO LA(FR_DLR) // €  (dead!)
