@@ -49,7 +49,7 @@
 #define FR_CCED N9      // ç  (ok)
 #define FR_AGRV N0      // à  (ok)
 #define FR_RPRN MINUS   // )  (ok)
-#define FR_EQL  EQUAL   // =  ()
+#define FR_EQL  EQUAL   // =  (-) LS(_)
 // Row 2
 #define FR_A    Q    // A
 #define FR_Z    W    // Z
@@ -61,9 +61,8 @@
 #define FR_I    I    // I
 #define FR_O    O    // O
 #define FR_P    P    // P
-#define FR_CIRC LEFT_BRACKET  // ^ (dead)
-//#define FR_DLR  RBKT      // $ (probably dead)
-#define FR_DLR  RIGHT_BRACE // $
+#define FR_CIRC LEFT_BRACKET  // ^  (ok) LS(¨)
+#define FR_DLR  RIGHT_BRACE   // $  (*)
 // Row 3
 #define FR_Q    A    // Q
 #define FR_S    S    // S
@@ -74,21 +73,21 @@
 #define FR_J    J    // J
 #define FR_K    K    // K
 #define FR_L    L    // L
-#define FR_M    SEMI // M
-#define FR_UGRV SQT  // ù
-#define FR_ASTR STAR // *
+#define FR_M    SEMI // M  (ok)
+#define FR_UGRV SQT  // ù  (ok)
+#define FR_ASTR STAR // *  (8)
 // Row 4
-#define FR_LABK STAR // <
-#define FR_W    Z    // W
-#define FR_X    X    // X
-#define FR_C    C    // C
-#define FR_V    V    // V
-#define FR_B    B    // B
-#define FR_N    N    // N
-#define FR_COMM M    // ,
-#define FR_SCLN COMMA // ;
-#define FR_COLN DOT   // :
-#define FR_EXLM SLASH  // !
+#define FR_LABK STAR   // <  (8)
+#define FR_W    Z      // W
+#define FR_X    X      // X
+#define FR_C    C      // C
+#define FR_V    V      // V
+#define FR_B    B      // B
+#define FR_N    N      // N
+#define FR_COMM M      // ,  (ok) LS(?)
+#define FR_SCLN COMMA  // ;  (ok) LS(.)
+#define FR_COLN DOT    // :  (ok) LS(/)
+#define FR_EXLM SLASH  // !  (=) LS(+)
 
 /* Shifted symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
@@ -104,16 +103,16 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define FR_1    LS(FR_AMPR) // 1
-#define FR_2    LS(FR_EACU) // 2
-#define FR_3    LS(FR_DQUO) // 3
-#define FR_4    LS(FR_QUOT) // 4
-#define FR_5    LS(FR_LPRN) // 5
-#define FR_6    LS(FR_MINS) // 6
-#define FR_7    LS(FR_EGRV) // 7
-#define FR_8    LS(FR_UNDS) // 8
-#define FR_9    LS(FR_CCED) // 9
-#define FR_0    LS(FR_AGRV) // 0
+#define FR_1    LS(N1) // 1
+#define FR_2    LS(N2) // 2
+#define FR_3    LS(N3) // 3
+#define FR_4    LS(N4) // 4
+#define FR_5    LS(N5) // 5
+#define FR_6    LS(N6) // 6
+#define FR_7    LS(N7) // 7
+#define FR_8    LS(N8) // 8
+#define FR_9    LS(N9) // 9
+#define FR_0    LS(N0) // 0
 #define FR_DEG  LS(MINUS)   // °
 #define FR_PLUS LS(FR_EQL)  // +
 // Row 2
