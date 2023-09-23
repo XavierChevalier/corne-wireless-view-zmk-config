@@ -91,10 +91,10 @@
         lower_layer {
             label = "Lower";
             bindings = <
-&kp FR_SUP2  &kp FR_EURO  &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP      &none     &kp FR_7  &kp FR_8  &kp FR_9  &none  &trans
-&kp TAB      &none        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &none     &kp FR_4  &kp FR_5  &kp FR_6  &none  &none
-&kp LSHFT    &none        &none           &none           &none            &none            &kp FR_0  &kp FR_1  &kp FR_2  &kp FR_3  &none  &trans
-                                          &trans          &trans           &trans           &trans    &trans    &trans
+&kp FR_SUP2  &kp FR_EURO  &kp HOME          &kp UP_ARROW    &kp END          &kp PAGE_UP      &none     &kp FR_7  &kp FR_8  &kp FR_9  &none  &trans
+&kp TAB      &none        &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &none     &kp FR_4  &kp FR_5  &kp FR_6  &none  &none
+&kp LSHFT    &none        &none             &none           &none            &none            &kp FR_0  &kp FR_1  &kp FR_2  &kp FR_3  &none  &trans
+                                    		&trans          &trans           &trans           &trans    &trans    &trans
             >;
         };
 
