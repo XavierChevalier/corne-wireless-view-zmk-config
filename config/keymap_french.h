@@ -62,7 +62,8 @@
 #define FR_O    O    // O
 #define FR_P    P    // P
 #define FR_CIRC LBKT  // ^ (dead)
-#define FR_DLR  RBKT  // $
+//#define FR_DLR  RBKT  // $ (probably dead)
+#define FR_DLR  KC_RBRC // $
 // Row 3
 #define FR_Q    A    // Q
 #define FR_S    S    // S
@@ -153,5 +154,4 @@
 #define FR_RBRC RA(FR_RPRN) // ]
 #define FR_RCBR RA(FR_EQL)  // }
 // Row 2
-#define FR_EURO RA(E)      // €
-#define FR_CURR RA(FR_DLR) // ¤
+#define FR_EURO A(FR_DLR) // €
