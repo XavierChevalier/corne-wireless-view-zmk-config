@@ -103,16 +103,16 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define FR_1    LS(N1) // 1
-#define FR_2    LS(N2) // 2
-#define FR_3    LS(N3) // 3
-#define FR_4    LS(N4) // 4
-#define FR_5    LS(N5) // 5
-#define FR_6    LS(N6) // 6
-#define FR_7    LS(N7) // 7
-#define FR_8    LS(N8) // 8
-#define FR_9    LS(N9) // 9
-#define FR_0    LS(N0) // 0
+#define FR_1    LS(N1) // 1  (ok)
+#define FR_2    LS(N2) // 2  (ok)
+#define FR_3    LS(N3) // 3  (ok)
+#define FR_4    LS(N4) // 4  (ok)
+#define FR_5    LS(N5) // 5  (ok)
+#define FR_6    LS(N6) // 6  (ok)
+#define FR_7    LS(N7) // 7  (ok)
+#define FR_8    LS(N8) // 8  (ok)
+#define FR_9    LS(N9) // 9  (ok)
+#define FR_0    LS(N0) // 0  (ok)
 #define FR_DEG  LS(MINUS)   // °
 #define FR_PLUS LS(FR_EQL)  // +
 // Row 2
