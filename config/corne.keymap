@@ -57,13 +57,13 @@
         };
 
         EHighAccent {
-            bindings = <&kp FR_EACU>;
+            bindings = <&kp FR_E_ACUTE>;
             key-positions = <14 3>;
             layers = <0>;
         };
 
         EGraveAccent {
-            bindings = <&kp FR_EGRV>;
+            bindings = <&kp FR_E_GRAVE>;
             key-positions = <3 16>;
             layers = <0>;
         };
