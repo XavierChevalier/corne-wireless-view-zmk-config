@@ -90,10 +90,10 @@
         lower_layer {
             label = "Lower";
             bindings = <
-&kp FR_EXCL  &kp FR_DQT   &kp FR_HASH   &kp FR_DLLR  &kp FR_PRCNT  &kp FR_AMPS   &none        &kp FR_N7  &kp FR_N8  &kp FR_N9  &none  &trans
-&kp FR_SQT   &kp FR_LPAR  &kp FR_STAR   &kp FR_PLUS  &kp FR_COMMA  &kp FR_MINUS  &none        &kp FR_N4  &kp FR_N5  &kp FR_N6  &none  &none
-&kp FR_DOT   &kp FR_FSLH  &kp FR_COLON  &kp FR_SEMI  &kp FR_LT     &kp FR_EQUAL  &kp FR_N0    &kp FR_N1  &kp FR_N2  &kp FR_N3  &none  &trans
-                                        &trans       &trans        &trans        &trans       &trans    &trans
+&kp FR_GT     &kp FR_QMARK       &kp FR_AT      &kp FR_LBKT  &kp FR_BSLH    &kp FR_RBKT   &none        &kp FR_N7  &kp FR_N8  &kp FR_N9  &none  &trans
+&kp FR_CARET  &kp FR_UNDER       &kp FR_GRAVE   &kp FR_LBRC  &kp FR_PIPE    &kp FR_RBRC   &none        &kp FR_N4  &kp FR_N5  &kp FR_N6  &none  &none
+&kp FR_TILDE  &kp FR_POUND_SIGN  &kp FR_CURREN  &kp FR_SECT  &kp FR_UMLAUT  &kp FR_DEG    &kp FR_N0    &kp FR_N1  &kp FR_N2  &kp FR_N3  &none  &trans
+                                                &trans       &trans         &trans        &trans       &trans     &trans
             >;
         };
 
