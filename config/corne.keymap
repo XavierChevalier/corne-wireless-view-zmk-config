@@ -5,10 +5,10 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
 #include "keymap_french.h"
 #include "helper.h"
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     combos {
@@ -69,8 +69,13 @@
         };
 
         MediaLayer {
-            bindings = <&mo 2>;
+            bindings = <&mo 3>;
             key-positions = <38 39>;
+        };
+
+        NumLayer {
+            bindings = <&sl 2>;
+            key-positions = <18 19>;
         };
     };
 
@@ -90,11 +95,22 @@
         lower_layer {
             label = "Lower";
             bindings = <
-&kp FR_SQUARE   &kp FR_MICRO       &kp FR_A_GRAVE  &kp FR_C_CEDILLA  &kp FR_E_GRAVE  &kp FR_E_ACUTE  &none        &kp FR_N7  &kp FR_N8  &kp FR_N9  &none  &trans
-&kp FR_U_GRAVE  &kp FR_EURO        &none           &kp FR_LBRC       &kp FR_PIPE     &kp FR_RBRC     &none        &kp FR_N4  &kp FR_N5  &kp FR_N6  &none  &none
-&kp FR_TILDE    &kp FR_POUND_SIGN  &kp FR_CURREN   &kp FR_SECT       &kp FR_UMLAUT   &kp FR_DEG      &kp FR_N0    &kp FR_N1  &kp FR_N2  &kp FR_N3  &none  &trans
-                                                  &trans            &trans          &trans          &trans       &trans     &trans
+&kp FR_SQUARE   &kp FR_MICRO       &kp FR_A_GRAVE  &kp FR_C_CEDILLA  &kp FR_E_GRAVE  &kp FR_E_ACUTE    &none      &kp FR_N7  &kp FR_N8  &kp FR_N9  &none  &trans
+&kp FR_U_GRAVE  &kp FR_EURO        &none           &kp FR_LBRC       &kp FR_PIPE     &kp FR_RBRC       &none      &kp FR_N4  &kp FR_N5  &kp FR_N6  &none  &none
+&kp FR_TILDE    &kp FR_POUND_SIGN  &kp FR_CURREN   &kp FR_SECT       &kp FR_UMLAUT   &kp FR_DEG        &kp FR_N0  &kp FR_N1  &kp FR_N2  &kp FR_N3  &none  &trans
+                                                   &trans            &trans          &trans            &trans     &trans     &trans
             >;
+        };
+
+        num_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "Num";
         };
 
         media_layer {
