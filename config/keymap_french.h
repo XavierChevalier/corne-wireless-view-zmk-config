@@ -113,20 +113,20 @@
 #define FR_8    LS(N8) // 8  (ok)
 #define FR_9    LS(N9) // 9  (ok)
 #define FR_0    LS(N0) // 0  (ok)
-#define FR_DEG  LS(MINUS)   // °
-#define FR_PLUS LS(FR_EQL)  // +
+#define FR_DEG  LS(MINUS)   // ° (ok)
+#define FR_PLUS LS(FR_EQL)  // + (_)
 // Row 2
-#define FR_DIAE LS(FR_CIRC) // ¨  (dead)
-#define FR_PND  LS(FR_DLR)  // £
+#define FR_DIAE LS(FR_CIRC) // ¨  (ok)
+#define FR_PND  LS(FR_DLR)  // £  (*)
 // Row 3
-#define FR_PERC LS(FR_UGRV) // %
-#define FR_MICR LS(FR_ASTR) // µ
+#define FR_PERC LS(FR_UGRV) // %  (ok)
+#define FR_MICR LS(FR_ASTR) // µ  (8)
 // Row 4
-#define FR_RABK LS(FR_LABK) // >
-#define FR_QUES LS(FR_COMM) // ?
-#define FR_DOT  LS(FR_SCLN) // .
-#define FR_SLSH LS(FR_COLN) // /
-#define FR_SECT N5 // §
+#define FR_RABK LS(FR_LABK) // >  (8)
+#define FR_QUES LS(FR_COMM) // ?  (ok)
+#define FR_DOT  LS(FR_SCLN) // .  (ok)
+#define FR_SLSH LS(FR_COLN) // /  (ok)
+#define FR_SECT N5          // §  ( ( ) LS(5)
 
 /* AltGr symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
@@ -142,14 +142,14 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define FR_TILD RA(FR_EACU) // ~  (dead)
-#define FR_HASH RA(FR_DQUO) // #
+#define FR_TILD RA(FR_EACU) // ~  (ë) LS(„)
+#define FR_HASH RA(FR_DQUO) // #  (“) LS(”)
 #define FR_LCBR RA(N5)      // {  (ok)
 #define FR_LBRC LS(FR_LCBR) // [  (ok)
-#define FR_PIPE RA(FR_MINS) // |
-#define FR_GRV  RA(FR_EGRV) // `  (dead)
-#define FR_BSLS RA(FR_UNDS) // (backslash)
-#define FR_AT   RA(FR_AGRV) // @
+#define FR_PIPE RA(FR_MINS) // |  (¶) LS(å)
+#define FR_GRV  RA(FR_EGRV) // `  («) LS(»)
+#define FR_BSLS RA(FR_UNDS) // (¡) LS(Û)
+#define FR_AT   RA(FR_AGRV) // @ (ø) LS(Ø)
 #define FR_RCBR RA(MINUS)   // }  (ok)
 #define FR_RBRC LS(FR_RCBR) // ]  (ok)
 // Row 2
