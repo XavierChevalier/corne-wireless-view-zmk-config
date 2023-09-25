@@ -15,8 +15,9 @@
         compatible = "zmk,combos";
 
         NumLayer {
-            bindings = <&sl 2>;
+            bindings = <&tog 2>;
             key-positions = <18 19>;
+            layers = <0 2>;
         };
 
         MediaLayer {
