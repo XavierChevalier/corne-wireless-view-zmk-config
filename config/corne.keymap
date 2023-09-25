@@ -14,40 +14,14 @@
     combos {
         compatible = "zmk,combos";
 
-        Up {
-            bindings = <&kp UP_ARROW>;
-            key-positions = <20 31>;
-            layers = <0>;
+        NumLayer {
+            bindings = <&sl 2>;
+            key-positions = <18 19>;
         };
 
-        Down {
-            bindings = <&kp DOWN_ARROW>;
-            key-positions = <20 33>;
-            layers = <0>;
-        };
-
-        Left {
-            bindings = <&kp LEFT_ARROW>;
-            key-positions = <31 32>;
-            layers = <0>;
-        };
-
-        Right {
-            bindings = <&kp RIGHT_ARROW>;
-            key-positions = <32 33>;
-            layers = <0>;
-        };
-
-        PageUp {
-            bindings = <&kp PAGE_UP>;
-            key-positions = <19 20>;
-            layers = <0>;
-        };
-
-        PageDown {
-            bindings = <&kp PAGE_DOWN>;
-            key-positions = <20 21>;
-            layers = <0>;
+        MediaLayer {
+            bindings = <&mo 3>;
+            key-positions = <38 39>;
         };
 
         AtSymbol {
@@ -68,28 +42,18 @@
             layers = <0>;
         };
 
-        MediaLayer {
-            bindings = <&mo 3>;
-            key-positions = <38 39>;
-        };
-
-        NumLayer {
-            bindings = <&sl 2>;
-            key-positions = <18 19>;
-        };
-
         AGraveAccent {
-            bindings = <&kp A>;
+            bindings = <&kp FR_A_GRAVE>;
             key-positions = <1 2>;
         };
 
         CCedilla {
-            bindings = <&kp C>;
+            bindings = <&kp FR_C_CEDILLA>;
             key-positions = <27 28>;
         };
 
         UGraveAccent {
-            bindings = <&kp U>;
+            bindings = <&kp FR_U_GRAVE>;
             key-positions = <7 20>;
         };
     };
