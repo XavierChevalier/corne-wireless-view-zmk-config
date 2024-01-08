@@ -73,7 +73,7 @@
         };
 
         CMDZ {
-            bindings = <&kp LG(Z)>;
+            bindings = <&kp LG(Q)>;
             key-positions = <16 17>;
         };
     };
