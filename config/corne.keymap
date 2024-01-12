@@ -27,7 +27,7 @@
 
         EHighAccent {
             bindings = <&kp FR_E_ACUTE>;
-            key-positions = <3 4>;
+            key-positions = <15 16>;
             layers = <0>;
         };
 
@@ -73,7 +73,7 @@
         };
 
         CMDZ {
-            bindings = <&kp LG(Q)>;
+            bindings = <&kp LG(W)>;
             key-positions = <16 17>;
         };
     };
