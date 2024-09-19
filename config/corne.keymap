@@ -14,11 +14,6 @@
     combos {
         compatible = "zmk,combos";
 
-        MediaLayer {
-            bindings = <&mo 3>;
-            key-positions = <12 23>;
-        };
-
         AtSymbol {
             bindings = <&kp FR_AT>;
             key-positions = <18 30>;
@@ -81,16 +76,18 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // 0
         default_layer {
             label = "Base";
             bindings = <
 &mt LS(TAB) TAB   &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y                 &kp U      &kp I      &kp O    &kp P     &kp BACKSPACE
-&mo 2             &kp A  &kp S  &kp D     &kp F  &kp G        &kp H                 &kp J      &kp K      &kp L    &kp SEMI  &key_repeat
+&mo 2             &kp A  &kp S  &kp D     &kp F  &kp G        &kp H                 &kp J      &kp K      &kp L    &kp SEMI  &mo 3
 &kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N                 &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                                 &kp LGUI  &mo 1  &kp SPACE    &mt LS(LC(LALT)) RET  &kp LSHFT  &kp RALT
             >;
         };
 
+        // 1
         lower_layer {
             label = "Lower";
             bindings = <
@@ -101,6 +98,7 @@
             >;
         };
 
+        // 2
         num_layer {
             label = "Num";
             bindings = <
@@ -111,6 +109,7 @@
             >;
         };
 
+        // 3
         media_layer {
             label = "Media";
             bindings = <
