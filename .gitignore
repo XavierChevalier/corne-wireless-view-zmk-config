@@ -1,6 +1,7 @@
 .history
 .build/
 build-output/
+.ccache/
 # West / ZMK cache (persisted between runs to avoid re-downloading)
 .west/
 modules/
