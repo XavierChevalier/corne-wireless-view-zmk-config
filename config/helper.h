@@ -62,10 +62,13 @@
 
 #define ALL 0xff
 #if !defined COMBO_TERM
-    #define COMBO_TERM 30
+    #define COMBO_TERM 18
+#endif
+#if !defined COMBO_IDLE
+    #define COMBO_IDLE 150
 #endif
 #if !defined COMBO_HOOK
-    #define COMBO_HOOK
+    #define COMBO_HOOK require-prior-idle-ms = <COMBO_IDLE>;
 #endif
 
 #define MACRO_CHOOSER5(_1, _2, _3, _4, _5, FUNC, ...) FUNC
