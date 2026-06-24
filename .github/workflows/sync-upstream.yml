@@ -1,0 +1,117 @@
+name: Sync with upstream
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: sync-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch upstream
+        run: |
+          git remote add upstream https://github.com/typeractivexyz/corne-wireless-view-zmk-config.git
+          git fetch upstream master
+
+      - name: Check if sync is needed
+        id: check
+        run: |
+          if git merge-base --is-ancestor upstream/master HEAD; then
+            echo "sync_needed=false" >> "$GITHUB_OUTPUT"
+            echo "Already up to date with upstream."
+          else
+            echo "sync_needed=true" >> "$GITHUB_OUTPUT"
+            echo "Upstream has new commits to merge."
+          fi
+
+      - name: Sync upstream via pull request
+        if: steps.check.outputs.sync_needed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          UPSTREAM_REPO="typeractivexyz/corne-wireless-view-zmk-config"
+          SYNC_LABEL="upstream-sync"
+          BRANCH_PREFIX="chore/sync-upstream"
+
+          gh label create "$SYNC_LABEL" \
+            --color "0366d6" \
+            --description "Automated upstream sync" 2>/dev/null || true
+
+          existing_branch=$(gh pr list \
+            --base master \
+            --label "$SYNC_LABEL" \
+            --state open \
+            --json headRefName \
+            --jq '.[0].headRefName // empty')
+
+          if [ -n "$existing_branch" ]; then
+            echo "Updating existing sync PR on branch: $existing_branch"
+            git checkout "$existing_branch"
+            branch="$existing_branch"
+          else
+            branch="${BRANCH_PREFIX}-$(date -u +%Y%m%d)"
+            git checkout -b "$branch"
+          fi
+
+          if ! git merge upstream/master \
+            -m "chore: sync with upstream ${UPSTREAM_REPO}"; then
+            git merge --abort
+            printf '%s\n' \
+              "Automated upstream sync from [${UPSTREAM_REPO}](https://github.com/${UPSTREAM_REPO}) failed due to merge conflicts." \
+              "" \
+              "Resolve manually:" \
+              "" \
+              '```bash' \
+              "git fetch upstream" \
+              "git checkout master" \
+              "git merge upstream/master" \
+              "# resolve conflicts, then:" \
+              "git push" \
+              '```' \
+              > /tmp/sync-issue-body.md
+            gh issue create \
+              --title "Upstream sync failed: merge conflicts" \
+              --label "$SYNC_LABEL" \
+              --body-file /tmp/sync-issue-body.md
+            exit 1
+          fi
+
+          git push -u origin "$branch"
+
+          if [ -z "$existing_branch" ]; then
+            printf '%s\n' \
+              "Automated sync from upstream [${UPSTREAM_REPO}](https://github.com/${UPSTREAM_REPO})." \
+              "" \
+              "Review the changes and merge when the build passes." \
+              > /tmp/sync-pr-body.md
+            gh pr create \
+              --base master \
+              --head "$branch" \
+              --title "chore: sync with upstream" \
+              --label "$SYNC_LABEL" \
+              --body-file /tmp/sync-pr-body.md
+          fi
