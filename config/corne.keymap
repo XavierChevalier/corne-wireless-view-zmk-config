@@ -4,7 +4,18 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "helper.h"
+/* COMBO_TERM → timeout-ms
+ * Max delay for all combo keys to be pressed after the first one. Lower = stricter
+ * simultaneous press; higher = easier to hit but more accidental triggers.
+ */
+#define COMBO_TERM 30
+
+/* COMBO_IDLE → require-prior-idle-ms
+ * Min idle time since the last key release before a combo may fire. Prevents false
+ * triggers while rolling through keys during fast typing (accents, @, Cmd+X/C/V).
+ */
+#define COMBO_IDLE 150
+
 #include "keymap_french.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -51,7 +62,7 @@
     combos {
         compatible = "zmk,combos";
 
-        AtSymbol {
+        at_symbol {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&kp FR_AT>;
@@ -59,7 +70,7 @@
             layers = <0>;
         };
 
-        EHighAccent {
+        e_high_accent {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&e_acute_morph>;
@@ -67,7 +78,7 @@
             layers = <0>;
         };
 
-        EGraveAccent {
+        e_grave_accent {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&e_grave_morph>;
@@ -75,56 +86,56 @@
             layers = <0>;
         };
 
-        AGraveAccent {
+        a_grave_accent {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&a_grave_morph>;
             key-positions = <1 2>;
         };
 
-        CCedilla {
+        c_cedilla {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&c_cedilla_morph>;
             key-positions = <27 15>;
         };
 
-        UGraveAccent {
+        u_grave_accent {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&u_grave_morph>;
             key-positions = <7 20>;
         };
 
-        Dash {
+        dash {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&kp FR_MINUS>;
             key-positions = <30 31>;
         };
 
-        CMDCut {
+        cut {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&kp LG(X)>;
             key-positions = <26 27>;
         };
 
-        CMDCopy {
+        copy {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&kp LG(C)>;
             key-positions = <27 28>;
         };
 
-        CMDPaste {
+        paste {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&kp LG(V)>;
             key-positions = <28 29>;
         };
 
-        CMDZ {
+        cmd_w {
             timeout-ms = <COMBO_TERM>;
             require-prior-idle-ms = <COMBO_IDLE>;
             bindings = <&kp LG(W)>;
